@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medic Care - Liste des patients</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #007bff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Medic Care - Liste des patients</h1>
+    <ul>
+        {% for patient in patients %}
+        <li>
+            {{ patient.first_name }} {{ patient.last_name }}
+            <a href="/update_medical_record/{{ patient.patient_id }}">Mettre à jour</a>
+            <a href="/view_medical_record/{{ patient.patient_id }}">Visualiser le dossier</a>
+            <form action="/delete_patient/{{ patient.patient_id }}" method="post" style="display: inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+        </li>
+           
+        {% endfor %}
+    </ul>
+    <a href="/">Ajouter un patient</a>
+</body>
+</html>

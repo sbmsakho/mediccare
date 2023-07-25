@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medic Care - Dossier médical</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #007bff;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  resize: vertical;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.back-btn {
+  margin-top: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.back-btn a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Medic Care - Dossier médical</h1>
+    <h2>{{ patient.first_name }} {{ patient.last_name }}</h2>
+    <p><strong>Diagnostic:</strong> {{ patient.medical_record['diagnosis'] }}</p>
+    <p><strong>Prescription:</strong> {{ patient.medical_record['prescription'] }}</p>
+    <a href="/list_patients">Retour à la liste des patients</a>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medic Care - Mise à jour du dossier médical</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #007bff;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  resize: vertical;
+}
+
+.form-group textarea {
+  height: 120px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.back-btn {
+  margin-top: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.back-btn a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Medic Care - Mise à jour du dossier médical</h1>
+    <form action="/update_medical_record/{{ patient.patient_id }}" method="post">
+        <label for="diagnosis">Diagnostic:</label>
+        <input type="text" id="diagnosis" name="diagnosis" value="{{ patient.medical_record['diagnosis'] }}"><br>
+        <label for="prescription">Prescription:</label>
+        <input type="text" id="prescription" name="prescription" value="{{ patient.medical_record['prescription'] }}"><br>
+        <input type="submit" value="Mettre à jour">
+    </form>
+    <a href="/list_patients">Retour à la liste des patients</a>
+</body>
+</html>
