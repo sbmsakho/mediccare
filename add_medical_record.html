@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medic Care - Ajouter un dossier médical</title>
+</head>
+<body>
+    <h1>Medic Care - Ajouter un dossier médical</h1>
+    <h2>Patient: {{ patient.first_name }} {{ patient.last_name }}</h2>
+    <form action="/add_medical_record/{{ patient.patient_id }}" method="post">
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required><br>
+        <label for="treatment">Traitement:</label>
+        <input type="text" id="treatment" name="treatment" required><br>
+        <input type="submit" value="Ajouter le dossier médical">
+    </form>
+    <br>
+    <a href="/list_patients">Retour à la liste des patients</a>
+</body>
+</html>

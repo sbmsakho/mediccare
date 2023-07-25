@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medic Care - Supprimer un patient</title>
+</head>
+<body>
+    <h1>Medic Care - Supprimer un patient</h1>
+    <h2>Patient: {{ patient.first_name }} {{ patient.last_name }}</h2>
+    <form action="/delete_patient/{{ patient.patient_id }}" method="post">
+        <p>Êtes-vous sûr de vouloir supprimer ce patient ?</p>
+        <input type="submit" value="Oui">
+    </form>
+    <br>
+    <a href="/list_patients">Annuler</a>
+</body>
+</html>
